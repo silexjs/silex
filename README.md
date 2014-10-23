@@ -1,4 +1,6 @@
-silex
+Silex
 =====
 
-The Node micro-framework based on the Express
+The Node micro-framework based on the Express.
+
+Coming soon...
