@@ -18,7 +18,7 @@ var commands = {
 		var projectName = argv._[1];
 		var dir = pa.resolve();
 		if(argv._[2] !== undefined) {
-			dir = pa.join(dir, argv._[2]);
+			dir = pa.resolve(dir, argv._[2]);
 		}
 		ncp(pa.join(__dirname, '../project'), dir, {
 			filter: function(fileName) {
