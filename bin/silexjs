@@ -20,10 +20,12 @@ var commands = {
 		if(argv._[2] !== undefined) {
 			dir = pa.join(dir, argv._[2]);
 		}
-		ncp(pa.join(__dirname, '../project'), dir, function(e) {
-			if(e) {
-				return console.error(e);
-			}
+		ncp(pa.join(__dirname, '../project'), dir, {
+			filter: function(fileName) {
+				return (fileName!=='.npmignore');
+			},
+		}, function(e) {
+			if(e) { throw e; }
 			var packagePath = pa.join(dir, './package.json');
 			var packageFile = ''+fs.readFileSync(packagePath);
 			fs.writeFileSync(packagePath, packageFile.replace('%project_name%', projectName));
