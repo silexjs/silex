@@ -20,6 +20,7 @@ var commands = {
 		if(argv._[2] !== undefined) {
 			dir = pa.resolve(dir, argv._[2]);
 		}
+		console.log('Transfers files... (in: '+dir+')');
 		ncp(pa.join(__dirname, '../project'), dir, {
 			filter: function(fileName) {
 				return (fileName!=='.npmignore');
@@ -29,8 +30,9 @@ var commands = {
 			var packagePath = pa.join(dir, './package.json');
 			var packageFile = ''+fs.readFileSync(packagePath);
 			fs.writeFileSync(packagePath, packageFile.replace('%project_name%', projectName));
+			argv._[1] = argv._[2];
 			commands.install(function() {
-				console.log('Project created!');
+				console.log('Project "'+projectName+'" created!');
 				(cb||function(){})();
 			});
 		});
@@ -38,11 +40,15 @@ var commands = {
 	install: function(cb) {
 		var dir = pa.resolve();
 		if(argv._[1] !== undefined) {
-			dir = pa.join(dir, argv._[1]);
+			dir = pa.resolve(dir, argv._[1]);
 		}
 		console.log('Install dependencies...');
-		exec('npm install '+dir, function(e, stdout, stderr) {
-			if(stdout != '') { console.log(stdout); }
+		exec('cd '+dir+' && npm install', function(e, stdout, stderr) {
+			if(stdout != '') {
+				console.log('-------------------------------------------------------------------------------');
+				console.log(stdout);
+				console.log('-------------------------------------------------------------------------------');
+			}
 			console.log('Install namepace... (Spaceload)');
 			exec('spaceload install '+dir, function(e, stdout, stderr) {
 				if(stdout != '') { console.log(stdout); }

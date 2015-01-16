@@ -1,6 +1,6 @@
 {
 	"name": "silex",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "The Node framework based on the Symfony 2",
 	"author": "Valentin Allaire <valentin@sitexw.fr>",
 	"license": "MIT",
