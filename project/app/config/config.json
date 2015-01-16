@@ -12,7 +12,7 @@
 	},
 	
 	"framework": {
-		"router": {
+		"routing": {
 			"routes": { "import": "%kernel.dir.app%/config/routing.json" }
 		},
 		"templating": {
