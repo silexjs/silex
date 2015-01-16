@@ -23,7 +23,7 @@ var commands = {
 		console.log('Transfers files... (in: '+dir+')');
 		ncp(pa.join(__dirname, '../project'), dir, {
 			filter: function(fileName) {
-				return (fileName!=='.npmignore');
+				return (pa.basename(fileName)!=='.npmignore');
 			},
 		}, function(e) {
 			if(e) { throw e; }
