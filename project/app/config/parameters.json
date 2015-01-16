@@ -1,0 +1,12 @@
+{
+	"parameters": {
+		"http_server_port":		8080,
+		
+		"database_dialect":		"mysql",
+		"database_host":		"localhost",
+		"database_port": 		"3306",
+		"database_user": 		"root",
+		"database_password":	"",
+		"database_name": 		"test"
+	}
+}

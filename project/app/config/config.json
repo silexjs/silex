@@ -1,0 +1,31 @@
+{
+	"imports": [
+		{ "resource": "./parameters.json" }
+	],
+	
+	"http": {
+		"server": {
+			"ports": [
+				{ "port": "%http_server_port%", "secure": false }
+			]
+		}
+	},
+	
+	"framework": {
+		"router": {
+			"routes": { "import": "%kernel.dir.app%/config/routing.json" }
+		},
+		"templating": {
+			"engine": "silex.swig.templating"
+		}
+	},
+	
+	"sequelize": {
+		"dialect":	"%database_dialect%",
+		"host":		"%database_host%",
+		"port":		"%database_port%",
+		"dbname":	"%database_name%",
+		"user":		"%database_user%",
+		"password":	"%database_password%"
+	}
+}

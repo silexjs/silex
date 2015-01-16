@@ -1,0 +1,10 @@
+{
+	"homepage": {
+		"path": "/",
+		"defaults": { "_controller": "SitexwSiteBundle:Default:homepage" }
+	},
+	"sitexw_site": {
+		"prefix": "/",
+		"sub": { "import": "@SitexwSiteBundle/Resources/config/routing.json" }
+	}
+}

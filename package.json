@@ -1,34 +1,34 @@
 {
-  "name": "silex",
-  "version": "0.0.0",
-  "description": "The Node micro-framework based on the Express",
-  "main": "index.js",
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "dependencies": {
-    "express": "4.x"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/silexjs/silex.git"
-  },
-  "keywords": [
-    "silex",
-    "silexjs",
-    "framework",
-    "web",
-    "express",
-    "php",
-    "symphony"
-  ],
-  "author": "Valentin Allaire <valentin@sitexw.fr>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/silexjs/silex/issues"
-  },
-  "homepage": "https://github.com/silexjs/silex"
+	"name": "silex",
+	"version": "0.0.1",
+	"description": "The Node framework based on the Symfony 2",
+	"author": "Valentin Allaire <valentin@sitexw.fr>",
+	"license": "MIT",
+	"keywords": [
+		"silex",
+		"silexjs",
+		"framework",
+		"web",
+		"symfony",
+		"symfony2"
+	],
+	"dependencies": {
+		"minimist": "1.x",
+		"ncp": "1.x"
+	},
+	"devDependencies": {},
+	"engines": {
+		"node": ">=0.10.0"
+	},
+	"bin": {
+		"spaceload" : "./bin/silexjs"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/silexjs/silex.git"
+	},
+	"bugs": {
+		"url": "https://github.com/silexjs/silex/issues"
+	},
+	"homepage": "https://github.com/silexjs/silex"
 }

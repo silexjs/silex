@@ -1,0 +1,18 @@
+{
+	"sitexw_site_test_hello": {
+		"path": "/test/hello/{name}/{color}",
+		"defaults": {
+			"_controller": "SitexwSiteBundle:Test:hello",
+			"color": "green"
+		}
+	},
+	
+	"sitexw_site_user_register": {
+		"path": "/inscription",
+		"defaults": { "_controller": "SitexwSiteBundle:User:register" }
+	},
+	"sitexw_site_user_connection": {
+		"path": "/connexion",
+		"defaults": { "_controller": "SitexwSiteBundle:User:connection" }
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"private": true,
+	"name": "%project_name%",
+	"version": "1.0.0",
+	"main": "index.js",
+	"dependencies":	{
+		"spaceload": "<2.0.0",
+		"silex-component-kernel": "0.0.x",
+		"silex-bundle-framework": "0.0.x",
+		"silex-bundle-http-server": "0.0.x",
+		"silex-bundle-sequelize": "0.0.x",
+		"silex-bundle-swig": "0.0.x"
+	}
+}
