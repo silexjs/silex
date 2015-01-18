@@ -1,6 +1,6 @@
 {
 	"name": "silex",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"description": "The Node framework based on the Symfony 2",
 	"author": "Valentin Allaire <valentin@sitexw.fr>",
 	"license": "MIT",
@@ -20,8 +20,9 @@
 	"engines": {
 		"node": ">=0.10.0"
 	},
+	"preferGlobal": true,
 	"bin": {
-		"silexjs" : "./bin/silexjs"
+		"silex" : "./bin/silex"
 	},
 	"repository": {
 		"type": "git",
