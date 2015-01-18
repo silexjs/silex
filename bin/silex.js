@@ -61,8 +61,11 @@ var commands = {
 		console.log('------------------------');
 		console.log('');
 		console.log('Commands :');
-		console.log('> create {PROJECT-NAME} [{PATH}]    Create the basic files to a new project');
-		console.log('> install [{PATH}]          Installs a project (execute basic commands)');
+		console.log('> create {PROJECT-NAME} [{PATH}]    Create the basic files to a new project *');
+		console.log('> install [{PATH}]                  Installs a project (execute basic commands) *');
+		console.log('');
+		console.log('* Command require "spaceload" package in global ("npm install -g spaceload")');
+		console.log('');
 	},
 };
 
