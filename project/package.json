@@ -8,6 +8,7 @@
 		"silex-component-kernel": "0.0.x",
 		"silex-bundle-framework": "0.0.x",
 		"silex-bundle-http-server": "0.0.x",
+		"silex-bundle-http-static": "0.0.x",
 		"silex-bundle-sequelize": "0.0.x",
 		"silex-bundle-swig": "0.0.x"
 	}
