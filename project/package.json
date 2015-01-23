@@ -1,6 +1,6 @@
 {
 	"private": true,
-	"name": "%project_name%",
+	"name": "encheres-one",
 	"version": "1.0.0",
 	"main": "index.js",
 	"dependencies":	{

@@ -8,6 +8,13 @@
 			"ports": [
 				{ "port": "%http_server_port%", "secure": false }
 			]
+		},
+		"static": {
+			"public": {
+				"auto": true,
+				"pattern": "/public/{bundle}/",
+				"app": "/public"
+			}
 		}
 	},
 	

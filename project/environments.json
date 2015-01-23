@@ -1,0 +1,26 @@
+{
+	"production": {
+		"log": {
+			"show": "emergency",
+			"write": "error"
+		}
+	},
+	"pre_production": {
+		"log": {
+			"show": "emergency",
+			"write": "info"
+		}
+	},
+	"testing": {
+		"log": {
+			"show": "info",
+			"write": "info"
+		}
+	},
+	"development": {
+		"log": {
+			"show": "debug",
+			"write": "info"
+		}
+	}
+}
