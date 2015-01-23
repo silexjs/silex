@@ -9,16 +9,17 @@ AppKernel.prototype.constructor = AppKernel;
 
 AppKernel.prototype.registerBundles = function() {
 	var bundles = [
-		'Silex.HttpServerBundle.SilexHttpServerBundle',
 		'Silex.FrameworkBundle.SilexFrameworkBundle',
+		'Silex.HttpServerBundle.SilexHttpServerBundle',
+		'Silex.HttpStaticBundle.SilexHttpStaticBundle',
 		'Silex.SequelizeBundle.SilexSequelizeBundle',
 		'Silex.SilexSwigBundle.SilexSwigBundle',
 		
 		'Sitexw.SiteBundle.SitexwSiteBundle',
 	];
 	
-	if(['devlopment', 'testing'].indexOf(this.env) !== -1) {
-		bundles.push('Sitexw.TestBundle.SitexwTestBundle');
+	if(['development', 'testing'].indexOf(this.env) !== -1) {
+		// Other bundles...
 	}
 	
 	return bundles;
