@@ -15,6 +15,7 @@ Console.prototype = {
 		if(isSilexProject === false) {
 			this.cmd
 				.command('project:create <name> [dir]')
+				.option('-f, --force', 'Force the creation of the project if the folder is not empty')
 				.description('Create basic files and installs the framework (see project:install)')
 				.action(function(projectName, dir, options) {
 					self.commandProjectCreate.call(self, projectName, dir, options, cb);
@@ -31,8 +32,13 @@ Console.prototype = {
 	commandProjectCreate: function(projectName, dir, options, cb) {
 		var self = this;
 		var dir = pa.resolve(dir || '');
+		var cb = cb || function(){};
 		if(fs.existsSync(dir) === false) {
 			fs.mkdirSync(dir);
+		} else if(options.force !== true && fs.readdirSync(dir).length > 0) {
+			console.log('The project folder is not empty, use the "--force" option to force creation');
+			cb();
+			return;
 		}
 		this.setLoader('Transfers files% (in: '+dir+')');
 		ncp(pa.join(__dirname, './project'), dir, {
@@ -47,7 +53,7 @@ Console.prototype = {
 			fs.writeFileSync(packagePath, packageFile.replace('%project_name%', projectName));
 			self.commandProjectInstall(dir, options, function() {
 				console.log('Project "'+projectName+'" created!');
-				(cb||function(){})();
+				cb();
 			});
 		});
 	},
@@ -55,6 +61,7 @@ Console.prototype = {
 	commandProjectInstall: function(dir, options, cb) {
 		var self = this;
 		var dir = pa.resolve(dir || '');
+		var cb = cb || function(){};
 		this.setLoader('Install dependencies');
 		exec('cd '+dir+' && npm install', function(e, stdout, stderr) {
 			self.stopLoader();
@@ -71,7 +78,7 @@ Console.prototype = {
 					console.log(stdout);
 					console.log('--------------------------------------------------------------------------- END');
 				}
-				(cb||function(){})();
+				cb();
 			});
 		});
 	},
