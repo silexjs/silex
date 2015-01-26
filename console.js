@@ -31,13 +31,16 @@ Console.prototype = {
 	commandProjectCreate: function(projectName, dir, options, cb) {
 		var self = this;
 		var dir = pa.resolve(dir || '');
-		
-		console.log('Transfers files... (in: '+dir+')');
-		ncp(pa.join(__dirname, '../project'), dir, {
+		if(fs.existsSync(dir) === false) {
+			fs.mkdirSync(dir);
+		}
+		this.setLoader('Transfers files% (in: '+dir+')');
+		ncp(pa.join(__dirname, './project'), dir, {
 			filter: function(fileName) {
 				return (pa.basename(fileName)!=='.npmignore');
 			},
 		}, function(e) {
+			self.stopLoader();
 			if(e) { throw e; }
 			var packagePath = pa.join(dir, './package.json');
 			var packageFile = ''+fs.readFileSync(packagePath);

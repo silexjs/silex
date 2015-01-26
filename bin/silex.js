@@ -42,9 +42,9 @@ if(isSilexProject === true && hasNodeModules === true) {
 if(process.argv[2] === undefined) {
 	var str = '\n  (i) This console is ';
 	if(isSilexProject === true) {
-		str += 'connected to the Silex project "'+packageContent.name+'"';
+		str += 'connected to Silex project "'+packageContent.name+'"';
 	} else {
-		str += 'NOT connected to the Silex project';
+		str += 'NOT connected to Silex project';
 	}
 	console.log(str+'\n'+commander.helpInformation());
 	process.exit();
