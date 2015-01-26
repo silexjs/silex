@@ -1,5 +1,5 @@
 // Classic launcher
-require('./silex.js')({
+require('./launcher.js')({
 	splashScreen: false,
 	kernelMethod: 'initConsole',
 });

@@ -1,5 +1,5 @@
-// Launcher console
-require('./silex.js')({
+// Console launcher
+require('./launcher.js')({
 	splashScreen: true,
 	kernelMethod: 'init',
 });
