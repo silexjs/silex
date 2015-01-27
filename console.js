@@ -23,7 +23,7 @@ Console.prototype = {
 		}
 		this.cmd
 			.command('project:install [dir]')
-			.description('Create basic files and installs the framework (see project:install)')
+			.description('Installs the framework (Dependencies and Nmespace)')
 			.action(function(dir, options) {
 				self.commandProjectInstall.call(self, dir, options, cb);
 			});
