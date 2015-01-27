@@ -12,5 +12,5 @@
 		"silex-bundle-sequelize": "0.0.x",
 		"silex-bundle-swig": "0.0.x"
 	},
-	"frameworks": ["silexjs@0.0.x"]
+	"frameworks": ["silex@0.0.x"]
 }
