@@ -7,13 +7,12 @@ var DefaultController = function() {
 DefaultController.prototype = Object.create(Controller.prototype);
 DefaultController.prototype.constructor = DefaultController;
 
-DefaultController.prototype.homepageAction = function(end, variables) {
-	this.render('SitexwSiteBundle::homepage.html.twig');
-	end();
+DefaultController.prototype.homepageAction = function(variables) {
+	this.render('SitexwSiteBundle::homepage.html.twig').end();
 };
-DefaultController.prototype.nameAction = function(end, variables) {
+DefaultController.prototype.nameAction = function(variables) {
 	this.render('SitexwSiteBundle:Name:name.html.twig', variables);
-	end();
+	this.end();
 };
 
 
