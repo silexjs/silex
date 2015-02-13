@@ -8,10 +8,10 @@ DefaultController.prototype = Object.create(Controller.prototype);
 DefaultController.prototype.constructor = DefaultController;
 
 DefaultController.prototype.homepageAction = function(variables) {
-	this.render('SitexwSiteBundle::homepage.html.twig').end();
+	this.sendView('SitexwSiteBundle::homepage.html.twig').end();
 };
 DefaultController.prototype.nameAction = function(variables) {
-	this.render('SitexwSiteBundle:Name:name.html.twig', variables);
+	this.sendView('SitexwSiteBundle:Name:name.html.twig', variables);
 	this.end();
 };
 
