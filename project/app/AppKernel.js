@@ -11,9 +11,10 @@ AppKernel.prototype.registerBundles = function() {
 	var bundles = [
 		'Silex.FrameworkBundle.SilexFrameworkBundle',
 		'Silex.HttpServerBundle.SilexHttpServerBundle',
-		'Silex.HttpStaticBundle.SilexHttpStaticBundle',
 		'Silex.SequelizeBundle.SilexSequelizeBundle',
-		'Silex.SilexSwigBundle.SilexSwigBundle',
+		'Silex.SwigBundle.SilexSwigBundle',
+		
+		'Silex.HttpStaticBundle.SilexHttpStaticBundle',
 		
 		'Sitexw.SiteBundle.SitexwSiteBundle',
 	];
