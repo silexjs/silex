@@ -1,6 +1,6 @@
 {
 	"name": "silex",
-	"version": "0.0.32",
+	"version": "0.0.33",
 	"description": "The Node framework based on the Symfony 2",
 	"author": "Valentin Allaire <valentin@sitexw.fr>",
 	"license": "MIT",
@@ -13,6 +13,7 @@
 		"symfony2"
 	],
 	"dependencies": {
+		"spaceload": "<2.0.0",
 		"minimist": "1.x",
 		"ncp": "1.x",
 		"commander": "2.x"

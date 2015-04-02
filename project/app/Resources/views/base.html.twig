@@ -4,11 +4,24 @@
 	<meta charset="utf-8">
 	<title>{% block title %}My site with SilexJS{% endblock %}</title>
 	
+	{% public
+		'@SitexwSiteBundle/Resources/public/css/**/*.css'
+	%}<link href="{{ public.url }}" rel="stylesheet">
+	{% endpublic %}
+	
 	{% block head %}
 	{% endblock %}
 </head>
 <body>
 	<h3>My site with SilexJS</h3>
+	<hr>
+	<a href="{{ path('homepage') }}">Home</a>
+	|
+	<a href="{{ path('sitexw_site_test_hello', { name: 'World', color: 'blue' }) }}">Blue</a>
+	|
+	<a href="{{ path('sitexw_site_test_hello', { name: 'World', color: 'blue' }) }}">Green</a>
+	|
+	<a href="{{ path('sitexw_site_test_hello', { name: 'World', color: 'blue' }) }}">Grey</a>
 	<hr>
 	{% block content %}{% endblock %}
 </body>

@@ -1,5 +1,6 @@
 {
 	"parameters": {
+		"http_server_ip":		"",
 		"http_server_port":		8080,
 		
 		"database_dialect":		"mysql",

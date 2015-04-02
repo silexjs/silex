@@ -6,14 +6,19 @@
 	"http": {
 		"server": {
 			"ports": [
-				{ "port": "%http_server_port%", "secure": false }
+				{
+					"ip": "%http_server_ip%",
+					"port": "%http_server_port%",
+					"secure": false
+				}
 			]
 		},
 		"static": {
 			"public": {
 				"auto": true,
 				"pattern": "/public/{bundle}/",
-				"app": "/public"
+				"app": "/public",
+				"routePrefix": "public_"
 			}
 		}
 	},
@@ -23,8 +28,7 @@
 			"routes": { "import": "%kernel.dir.app%/config/routing.json" }
 		},
 		"templating": {
-			"engine": "silex.swig.templating",
-			"cache": "%kernel.debug%"
+			"engine": "silex.swig.templating"
 		}
 	},
 	

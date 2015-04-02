@@ -66,20 +66,19 @@ Console.prototype = {
 		exec('cd '+dir+' && npm install', function(e, stdout, stderr) {
 			self.stopLoader();
 			if(stdout != '') {
-				console.log('------------------------------------------------------------------------- START');
+				console.log('----------------------------------------------------------- START (npm install)');
 				console.log(stdout);
 				console.log('--------------------------------------------------------------------------- END');
 			}
 			self.setLoader('Install namepace% (Spaceload)');
-			exec('spaceload install '+dir, function(e, stdout, stderr) {
-				self.stopLoader();
-				if(stdout != '') {
-					console.log('------------------------------------------------------------------------- START');
-					console.log(stdout);
-					console.log('--------------------------------------------------------------------------- END');
-				}
-				cb();
-			});
+			var SpaceloadPath = pa.join(pa.dirname(require.resolve('spaceload')), 'lib/Generator.js');
+			var Generator = require(SpaceloadPath);
+			var generator = new Generator;
+			var autoload = generator.analyser(dir, false);
+			var outPath = pa.normalize(dir+'/autoload.json');
+			fs.writeFileSync(outPath, JSON.stringify(autoload, null, '\t'));
+			self.stopLoader();
+			cb();
 		});
 	},
 	

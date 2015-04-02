@@ -2,5 +2,8 @@
 
 {% block content %}
 	<h4>It's home page!</h4>
-	<a href="{{ url('sitexw_site_test_hello', { name: 'World', color: 'red' }) }}">Let's go Hello World in red!</a>
+	<a href="{{ path('sitexw_site_test_hello', { name: 'World', color: 'red' }) }}">Let's go Hello World in red!</a>
+	<br>
+	<br>
+	<img src="{{ path('public_sitexw_site_bundle', { path: 'img/hello-world.jpg' }) }},">
 {% endblock %}
