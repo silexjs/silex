@@ -9,7 +9,6 @@ Install
 
 ```bash
 $ npm install -g silex
-$ npm install -g spaceload
 ```
 
 Use CLI in a project
@@ -48,11 +47,13 @@ $ node index.js
  |_____/|_|_|\___/_/\_\____/|_____/   development
 
 Kernel: Bundle "SilexFrameworkBundle" loaded
-Kernel: Bundle "SilexHttpServerBundle" loaded
 Kernel: Bundle "SilexSequelizeBundle" loaded
+Kernel: Bundle "SilexHttpServerBundle" loaded
 Kernel: Bundle "SilexSwigBundle" loaded
+Kernel: Bundle "SilexUtilitiesBundle" loaded
 Kernel: Bundle "SilexHttpStaticBundle" loaded
-Kernel: Bundle "SilexMqapiBundle" loaded
+Kernel: Bundle "SilexMailerBundle" loaded
+Kernel: Bundle "SilexFacebookBundle" loaded
 ...
 ```
 
@@ -75,10 +76,11 @@ $ silex
 
   Commands:
 
-    project:install [dir]                  Installs the framework (Dependencies and Nmespace)
-    sequelize:db:toModels [options] [dir]  Create the models files from the database
-    sequelize:db:migrate [dir]             Runs migration files
-    sequelize:db:migrate:undo [dir]        Revert the last migration run
+    project:install [dir]                      Installs the framework (Dependencies and Nmespace)
+    sequelize:generate:models [options] [dir]  Create the models files from the database
+    sequelize:migrate:status [dir]             Show list of migrations
+    sequelize:migrate:up [dir]                 Runs migration files
+    sequelize:migrate:undo [dir]               Revert the last migration run
 
   Options:
 
